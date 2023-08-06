@@ -15,7 +15,7 @@ public class GetAllContacts {
 
     Gson gson = new Gson();
     OkHttpClient client = new OkHttpClient();
-    String token =  "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoibWJAZ21haWwuY29tIiwiaXNzIjoiUmVndWxhaXQiLCJleHAiOjE2OTA5MDU0OTAsImlhdCI6MTY5MDMwNTQ5MH0.qQkpwmsDTZdLbMmIauDxR2pa3hpLSDhZkip0vjfX6DQ";
+    String token =  "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoibWJAZ21haWwuY29tIiwiaXNzIjoiUmVndWxhaXQiLCJleHAiOjE2OTE5MzQwMTIsImlhdCI6MTY5MTMzNDAxMn0.xn48XA0DPbozhPMQ8RVq3DYAedhU4z0h08kWqKJQZIY";
 
     @Test
     public void getAllContactsPositive() throws IOException {
@@ -26,6 +26,9 @@ public class GetAllContacts {
                 .build();
 
         Response response = client.newCall(request).execute();
+        int statusCode = response.code();
+        String statusMessage = response.message();
+        System.out.println("Код ответа: " + statusCode + " " + statusMessage);
         Assert.assertTrue(response.isSuccessful());
 
         ContactListDTO contacts = gson.fromJson(response.body().string(), ContactListDTO.class);

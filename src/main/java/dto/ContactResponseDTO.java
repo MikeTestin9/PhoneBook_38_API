@@ -9,6 +9,5 @@ import lombok.*;
 
 public class ContactResponseDTO {
 
-
-
+    String message;
 }
