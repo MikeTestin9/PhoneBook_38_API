@@ -6,6 +6,7 @@ import lombok.*;
 @Getter
 @ToString
 @Builder
+
 public class ContactResponseDTO {
 
 

@@ -1,9 +1,6 @@
 package dto;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Setter
 @Getter
@@ -13,6 +10,5 @@ import lombok.ToString;
 public class AuthResponseDTO {
 
     String token;
-
 
 }

@@ -1,12 +1,11 @@
 package dto;
-import lombok.*;
 
+import lombok.*;
 
 @Setter
 @Getter
 @ToString
 @Builder
-
 
 public class ErrorDTO {
 
@@ -19,6 +18,5 @@ public class ErrorDTO {
     int status;
     String error;
     String message;
-
 
 }

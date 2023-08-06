@@ -12,5 +12,4 @@ public class ContactListDTO {
 
     List<ContactDTO> contacts;
 
-
 }

@@ -15,8 +15,7 @@ public class GetAllContacts {
 
     Gson gson = new Gson();
     OkHttpClient client = new OkHttpClient();
-
-    String token = "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoibWJAZ21haWwuY29tIiwiaXNzIjoiUmVndWxhaXQiLCJleHAiOjE2OTA5MDU0OTAsImlhdCI6MTY5MDMwNTQ5MH0.qQkpwmsDTZdLbMmIauDxR2pa3hpLSDhZkip0vjfX6DQ";
+    String token =  "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoibWJAZ21haWwuY29tIiwiaXNzIjoiUmVndWxhaXQiLCJleHAiOjE2OTA5MDU0OTAsImlhdCI6MTY5MDMwNTQ5MH0.qQkpwmsDTZdLbMmIauDxR2pa3hpLSDhZkip0vjfX6DQ";
 
     @Test
     public void getAllContactsPositive() throws IOException {
@@ -31,7 +30,7 @@ public class GetAllContacts {
 
         ContactListDTO contacts = gson.fromJson(response.body().string(), ContactListDTO.class);
 
-        for(ContactDTO contactDTO : contacts.getContacts()) {
+        for(ContactDTO contactDTO : contacts.getContacts()){
             System.out.println(contactDTO.getId());
             System.out.println(contactDTO.getEmail());
             System.out.println("===================================");
